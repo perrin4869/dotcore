@@ -1,0 +1,8 @@
+.feature-slideshow-wrapper
+{
+    margin: 0px auto;
+}
+
+.feature-slideshow-wrapper .feature-slideshow-images img{
+    border: 5px solid #CC7777;
+}

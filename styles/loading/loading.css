@@ -1,0 +1,35 @@
+/* 
+    Document   : loading
+    Created on : Sep 8, 2009, 5:02:47 AM
+    Author     : perrin
+    Description:
+        Defines styles used while loading components like galleries.
+*/
+
+.requires-loading-wrapper{
+    position: relative;
+    z-index: 1;
+}
+
+.loading-message{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    line-height: normal;
+}
+
+.loading-message table{
+    width: 100%;
+    height: 100%;
+}
+
+.loading-message table td{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.requires-loading-content{
+    opacity: 0;
+}

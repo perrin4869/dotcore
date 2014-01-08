@@ -1,0 +1,16 @@
+/* 
+    Document   : fade_in_gallery_ltr.css
+    Created on : Aug 11, 2009, 9:23:20 PM
+    Author     : perrin
+    Description:
+        This stylesheet defines the styles required for the gallery to adapt to LTR languages
+*/
+
+.gallery-images-div
+{
+    float: left;
+}
+
+.gallery-fullsize{
+    float: right;
+}

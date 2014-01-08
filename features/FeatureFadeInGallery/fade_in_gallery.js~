@@ -1,0 +1,52 @@
+// JavaScript Document
+
+function PreloadFadeInGalleryImages()
+{
+	// The images are a global variable loaded in the main page into paths dynamically by PHP
+	var preloader = new ImagePreloader(paths, function(){});
+	preloader.StartLoading();
+
+    // Get all the gallery images, and give them a click event
+
+    var images = jQuery("#gallery-images-div img");
+    var i;
+    for(i = 0; i < images.length; i++)
+    {
+        images[i].setAttribute("originalPath", paths[i]);
+        addEvent(images[i], "click", FadeInGalleryImageClicked);
+    }
+	
+	OnFadeInGalleryImagesPreloaded();
+}
+
+function GalleryLoadingFaded()
+{
+	$get("loading-div").style.display = "none";
+	$get("gallery-images-div").style.display = "block";
+}
+
+function OnFadeInGalleryImagesPreloaded()
+{
+	jQuery("#loading-div").fadeOut(150, GalleryLoadingFaded);
+}
+
+function FadeInGalleryImageClicked()
+{
+    jQuery("#current-image").stop();
+    imageToChange = this.getAttribute("originalPath");
+    jQuery("#current-image").fadeTo(300, 0, FadeInGalleryImageFaded);
+}
+
+function FadeInGalleryImageFaded()
+{
+    jQuery("#current-image").attr("src", "/crop_on_the_fly.php?img="+imageToChange+"&mw=471&mh=419").load(FadeInNewImageLoaded);
+}
+
+function FadeInNewImageLoaded()
+{
+    jQuery("#current-image").fadeTo(300, 1);
+}
+
+var fadeInterval = 150;
+var imageToChange;
+addEvent(window, "load", PreloadFadeInGalleryImages);

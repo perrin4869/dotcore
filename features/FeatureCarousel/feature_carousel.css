@@ -1,0 +1,24 @@
+.feature-carousel-wrapper
+{
+    margin: 0px 20px;
+    display: block;
+    padding: 2px;
+    border: 1px solid #ECECEA;
+    line-height: normal;
+    overflow: hidden;
+    text-align: center;
+}
+
+.feature-carousel-wrapper .feature-carousel-loading{
+    margin: 0px !important;
+}
+
+.feature-carousel-wrapper .feature-carousel-images{
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
+.feature-carousel-wrapper .feature-carousel-images img{
+    vertical-align: middle; /* Fixes the 3px lower spacing */
+}

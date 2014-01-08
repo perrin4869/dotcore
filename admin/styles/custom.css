@@ -1,0 +1,151 @@
+a{
+    color: #4377EE;
+    cursor: pointer;
+}
+
+.datagrid{
+    width: 100%;
+    color: #15428B;
+    table-layout: fixed;
+}
+
+.datagrid thead{
+    background-color: #8DB2E3;
+}
+
+.datagrid thead th{
+    text-align: right;
+    font-weight: bold;
+}
+
+.datagrid tr{
+    background-color: #DEECFD;
+}
+
+.datagrid tr.alternating{
+    background-color: #FFFFFF;
+}
+
+.datagrid a{
+    color: #0066FF;
+}
+
+.datagrid td{
+    padding: 3px;
+}
+
+.datagrid td img{
+    vertical-align: middle;
+    max-width: 300px;
+}
+
+.datagrid td.image{
+    text-align: center;
+}
+
+.datagrid td.command, .datagrid th.command{
+    text-align: center;
+    width: 80px;
+}
+
+.datagrid td.command img{
+    cursor: pointer;
+}
+
+.sub_menu{
+    border-top: 1px solid #8DB2E3;
+    padding: 4px;
+}
+
+.sub_menu img{
+    vertical-align: middle;
+}
+
+.feedback{
+	text-align: center;
+	color: #D52B2F;
+	margin-bottom: 15px;
+	font-weight: bold;
+}
+
+/* Fix Prototype Window's direction problem */
+
+.table_window{
+	direction: ltr;
+}
+
+#windowed_body{
+	background-color: #AACCDD;	
+}
+
+#windowed_content{
+	direction: rtl;
+	width: 350px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+#configuration-edit-form input{
+	direction: ltr;
+}
+
+div#sub_menu {
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.ProgramBox{
+    width: 800px;
+    border: 1px solid #15428B;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.ProgramBox legend{
+    color: #15428B;
+    font-size: 18px;
+}
+
+.ProgramBox .ActionBox{
+    display: inline;
+    float: right;
+    margin-right: 30px;
+    overflow: hidden;
+}
+
+.ProgramBox .ActionBox img{
+    width: 100px;
+}
+
+.ActionBox .ActionCaption{
+    clear: both;
+    display: block;
+    text-align: center;
+}
+
+#LoginWrapper{
+    border: 1px solid #15428B;
+    margin: 15px auto;
+    width: 450px;
+    text-align: center;
+    position: relative;
+    height: 200px;
+}
+
+#LoginWrapper #LockImage{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 125px;
+}
+
+#LoginWrapper .title {
+    margin: 0px;
+    padding: 0px;
+    background: url(/admin/images/img04.gif) repeat-x top;
+    margin-bottom: 10px;
+}
+
+#LoginWrapper form{
+    padding: 15px;
+}
