@@ -1,65 +1,65 @@
  .gallery-content
 {
-    text-align: center;
-    width: 100%;
-    clear: both;
-    overflow: hidden;
+	text-align: center;
+	width: 100%;
+	clear: both;
+	overflow: hidden;
 }
 
 .gallery-thumbnails-div {
-    overflow: hidden;
-    width: 100%;
+	overflow: hidden;
+	width: 100%;
 }
 
 .gallery-thumbnails-div table{
-    table-layout: fixed;
-    margin: 0px auto;
+	table-layout: fixed;
+	margin: 0px auto;
 }
 
 .gallery-thumbnails-div img
 {
-    margin: 0px 5px 10px 5px;
-    cursor: pointer;
-    border: 1px solid #470F00;
-    float: right;
+	margin: 0px 5px 10px 5px;
+	cursor: pointer;
+	border: 1px solid #470F00;
+	float: right;
 }
 
 .gallery-nav
 {
-    text-align: center;
+	text-align: center;
 }
 
 .gallery-nav a
 {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .prev-page-button, .next-page-button
 {
-    text-align: center;
-    float: right;
-    display: inline;
-    background-color: #993366;
-    color: #FFFFFF;
-    margin-right: 5px;
-    margin-bottom: 2px;
-    margin-top: 5px;
+	text-align: center;
+	float: right;
+	display: inline;
+	background-color: #993366;
+	color: #FFFFFF;
+	margin-right: 5px;
+	margin-bottom: 2px;
+	margin-top: 5px;
 }
 
 .next-page-button
 {
-    float: left;
-    margin-right: 0px;
-    margin-left: 5px;
+	float: left;
+	margin-right: 0px;
+	margin-left: 5px;
 }
 
 .gallery-nav img{
-    border: none;
-    margin: 0px;
-    cursor: default;
-    vertical-align: bottom;
+	border: none;
+	margin: 0px;
+	cursor: default;
+	vertical-align: bottom;
 }
 
 .gallery-nav a img{
-    cursor: pointer;
+	cursor: pointer;
 }

@@ -7,62 +7,62 @@
  */
 class DotCoreContactMemberRecord extends DotCoreDataRecord {
 
-    /**
-     * Constructor for Contact Members record
-     *
-     * @param DotCoreDAL $dal
-     */
-    public function  __construct(DotCoreDAL $dal) {
-        parent::__construct($dal);
-    }
+	/**
+	 * Constructor for Contact Members record
+	 *
+	 * @param DotCoreDAL $dal
+	 */
+	public function  __construct(DotCoreDAL $dal) {
+		parent::__construct($dal);
+	}
 
-    /*
-     *
-     * Accessors:
-     *
-     */
-    
-    /*
-     * Getters:
-     */
+	/*
+	 *
+	 * Accessors:
+	 *
+	 */
+	
+	/*
+	 * Getters:
+	 */
 
-    public function getContactMemberID() {
-        return $this->GetField(DotCoreContactMemberDAL::CONTACT_MEMBER_ID);
-    }
+	public function getContactMemberID() {
+		return $this->GetField(DotCoreContactMemberDAL::CONTACT_MEMBER_ID);
+	}
 
-    public function getContactMemberEmail() {
-        return $this->GetField(DotCoreContactMemberDAL::CONTACT_MEMBER_EMAIL);
-    }
+	public function getContactMemberEmail() {
+		return $this->GetField(DotCoreContactMemberDAL::CONTACT_MEMBER_EMAIL);
+	}
 
-    public function getContactMemberDateAdded() {
-        return $this->GetField(DotCoreContactMemberDAL::CONTACT_MEMBER_DATE_ADDED);
-    }
+	public function getContactMemberDateAdded() {
+		return $this->GetField(DotCoreContactMemberDAL::CONTACT_MEMBER_DATE_ADDED);
+	}
 
-    public function getContactMemberLanguageID() {
-        return $this->GetField(DotCoreContactMemberDAL::CONTACT_MEMBER_LANGUAGE_ID);
-    }
-
-
-    /*
-     * Setters:
-     */
+	public function getContactMemberLanguageID() {
+		return $this->GetField(DotCoreContactMemberDAL::CONTACT_MEMBER_LANGUAGE_ID);
+	}
 
 
-    private function setContactMemberID($val) {
-        $this->SetField(DotCoreContactMemberDAL::CONTACT_MEMBER_ID, $val);
-    }
+	/*
+	 * Setters:
+	 */
 
-    public function setContactMemberEmail($email) {
-        $this->SetField(DotCoreContactMemberDAL::CONTACT_MEMBER_EMAIL, $email);
-    }
 
-    public function setContactMemberDateAdded($date_added) {
-        $this->SetField(DotCoreContactMemberDAL::CONTACT_MEMBER_DATE_ADDED, $date_added);
-    }
+	private function setContactMemberID($val) {
+		$this->SetField(DotCoreContactMemberDAL::CONTACT_MEMBER_ID, $val);
+	}
 
-    public function setContactMemberLanguageID($lang_id) {
-        $this->SetField(DotCoreContactMemberDAL::CONTACT_MEMBER_LANGUAGE_ID, $lang_id);
-    }
+	public function setContactMemberEmail($email) {
+		$this->SetField(DotCoreContactMemberDAL::CONTACT_MEMBER_EMAIL, $email);
+	}
+
+	public function setContactMemberDateAdded($date_added) {
+		$this->SetField(DotCoreContactMemberDAL::CONTACT_MEMBER_DATE_ADDED, $date_added);
+	}
+
+	public function setContactMemberLanguageID($lang_id) {
+		$this->SetField(DotCoreContactMemberDAL::CONTACT_MEMBER_LANGUAGE_ID, $lang_id);
+	}
 
 }
 ?>

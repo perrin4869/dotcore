@@ -13,9 +13,9 @@ register_core_component('DotCoreConfiguration', $configuration_folder . 'DotCore
 register_core_component('DotCoreConfigurationField', $configuration_folder . 'DotCoreConfiguration/include.php');
 
 function register_core_configuration_field($field_name, $class) {
-    global $configuration_folder;
-    register_core_component($class, $configuration_folder . 'DotCoreConfigurationFields/' . $class . '.php');
-    DotCoreConfiguration::AddType($field_name, $class);
+	global $configuration_folder;
+	register_core_component($class, $configuration_folder . 'DotCoreConfigurationFields/' . $class . '.php');
+	DotCoreConfiguration::AddType($field_name, $class);
 }
 
 register_core_configuration_field('string', 'DotCoreStringConfigurationField');

@@ -7,53 +7,53 @@
  */
 class DotCoreTemplateRecord extends DotCoreDataRecord {
 
-    /**
-     * Constructor for Template record
-     *
-     * @param DotCoreDAL $dal
-     */
-    public function  __construct(DotCoreDAL $dal) {
-        parent::__construct($dal);
-    }
+	/**
+	 * Constructor for Template record
+	 *
+	 * @param DotCoreDAL $dal
+	 */
+	public function  __construct(DotCoreDAL $dal) {
+		parent::__construct($dal);
+	}
 
-    /*
-     *
-     * Accessors:
-     *
-     */
-    
-    /*
-     * Getters:
-     */
+	/*
+	 *
+	 * Accessors:
+	 *
+	 */
+	
+	/*
+	 * Getters:
+	 */
 
-    public function getTemplateID() {
-        return $this->GetField(DotCoreTemplateDAL::TEMPLATE_ID);
-    }
+	public function getTemplateID() {
+		return $this->GetField(DotCoreTemplateDAL::TEMPLATE_ID);
+	}
 
-    public function getTemplateFolder() {
-        return $this->GetField(DotCoreTemplateDAL::TEMPLATE_FOLDER);
-    }
+	public function getTemplateFolder() {
+		return $this->GetField(DotCoreTemplateDAL::TEMPLATE_FOLDER);
+	}
 
-    public function getTemplateName() {
-        return $this->GetField(DotCoreTemplateDAL::TEMPLATE_NAME);
-    }
+	public function getTemplateName() {
+		return $this->GetField(DotCoreTemplateDAL::TEMPLATE_NAME);
+	}
 
-    /*
-     * Setters:
-     */
+	/*
+	 * Setters:
+	 */
 
 
-    private function setTemplateID($val) {
-        $this->SetField(DotCoreTemplateDAL::TEMPLATE_ID, $val);
-    }
+	private function setTemplateID($val) {
+		$this->SetField(DotCoreTemplateDAL::TEMPLATE_ID, $val);
+	}
 
-    public function setTemplateFolder($folder) {
-        $this->SetField(DotCoreTemplateDAL::TEMPLATE_FOLDER, $folder);
-    }
+	public function setTemplateFolder($folder) {
+		$this->SetField(DotCoreTemplateDAL::TEMPLATE_FOLDER, $folder);
+	}
 
-    public function setTemplateName($name) {
-        $this->SetField(DotCoreTemplateDAL::TEMPLATE_NAME, $name);
-    }
+	public function setTemplateName($name) {
+		$this->SetField(DotCoreTemplateDAL::TEMPLATE_NAME, $name);
+	}
 
 }
 ?>

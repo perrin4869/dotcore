@@ -1,22 +1,22 @@
 /* 
-    Document   : loading_iefix
-    Created on : Sep 9, 2009, 3:11:36 AM
-    Author     : perrin
-    Description:
-        Fix IE errors on the loading elements
+	Document   : loading_iefix
+	Created on : Sep 9, 2009, 3:11:36 AM
+	Author	 : perrin
+	Description:
+		Fix IE errors on the loading elements
 */
 
 .requires-loading-wrapper{
-    zoom: 1;
-    z-index: 1;
+	zoom: 1;
+	z-index: 1;
 }
 
 .loading-message{
-    height: expression(this.offsetParent.offsetHeight+"px");
+	height: expression(this.offsetParent.offsetHeight+"px");
 }
 
 .requires-loading-content{
-    filter:alpha(opacity=0);
-    zoom: 1;
-    z-index: 1;
+	filter:alpha(opacity=0);
+	zoom: 1;
+	z-index: 1;
 }

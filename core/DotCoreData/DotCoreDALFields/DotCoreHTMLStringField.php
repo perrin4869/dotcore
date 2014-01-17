@@ -7,13 +7,13 @@
  */
 class DotCoreHTMLStringField extends DotCoreStringField
 {
-    public function __construct(
-            $field_name,
-            DotCoreDAL $dal,
-            $is_nullable = TRUE)
-    {
-        parent::__construct($field_name, $dal, $is_nullable);
-    }
+	public function __construct(
+			$field_name,
+			DotCoreDAL $dal,
+			$is_nullable = TRUE)
+	{
+		parent::__construct($field_name, $dal, $is_nullable);
+	}
 }
 
 ?>

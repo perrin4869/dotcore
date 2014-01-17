@@ -7,26 +7,26 @@
  */
 class FeatureGeneralContent extends DotCoreFeature
 {
-    public function __construct(DotCoreFeatureRecord $record, $parameters = array())
-    {
-        parent::__construct($record, $parameters);
+	public function __construct(DotCoreFeatureRecord $record, $parameters = array())
+	{
+		parent::__construct($record, $parameters);
 
-        if(isset($parameters['name']))
-        {
-            $this->content = DotCorePageRenderer::GetCurrent()->GetGeneralContent($parameters['name']);
-        }
-    }
+		if(isset($parameters['name']))
+		{
+			$this->content = DotCorePageRenderer::GetCurrent()->GetGeneralContent($parameters['name']);
+		}
+	}
 
-    private $content = NULL;
+	private $content = NULL;
 	
-    /**
-     * Shows the contact form to the user
-     *
-     */
-    public function GetFeatureContent()
-    {
-        return $this->content;
-    }
+	/**
+	 * Shows the contact form to the user
+	 *
+	 */
+	public function GetFeatureContent()
+	{
+		return $this->content;
+	}
 }
 
 ?>

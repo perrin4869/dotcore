@@ -7,15 +7,15 @@
  */
 abstract class FactoryBase extends DotCoreObject
 {
-    private function __construct() { }
+	private function __construct() { }
 
-    abstract static public function GetInstance();
+	abstract static public function GetInstance();
 
-    /**
-     * Creates an instance of the class the factory is programmed to create
-     * @return DotCoreObject
-     */
-    abstract public function Create();
+	/**
+	 * Creates an instance of the class the factory is programmed to create
+	 * @return DotCoreObject
+	 */
+	abstract public function Create();
 }
 
 ?>

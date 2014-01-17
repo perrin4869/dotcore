@@ -7,108 +7,108 @@
  */
 class DotCoreContentBLL extends DotCoreBLL {
 
-    /*
-     *
-     * Fields accessors:
-     *
-     */
+	/*
+	 *
+	 * Fields accessors:
+	 *
+	 */
 
-    /**
-     * Gets the field that defines to which content in the template of
-     * this content's page this content belongs
-     * @return DotCoreIntField
-     */
-    public function getFieldTemplateContentID()
-    {
-        return $this->GetDAL()->GetField(DotCoreContentDAL::CONTENT_TEMPLATE_CONTENT_ID);
-    }
+	/**
+	 * Gets the field that defines to which content in the template of
+	 * this content's page this content belongs
+	 * @return DotCoreIntField
+	 */
+	public function getFieldTemplateContentID()
+	{
+		return $this->GetDAL()->GetField(DotCoreContentDAL::CONTENT_TEMPLATE_CONTENT_ID);
+	}
 
-    /**
-     * Gets the field that defines to which page this content belongs
-     * @return DotCoreIntField
-     */
-    public function getFieldContentPageID()
-    {
-        return $this->GetDAL()->GetField(DotCoreContentDAL::CONTENT_PAGE_ID);
-    }
+	/**
+	 * Gets the field that defines to which page this content belongs
+	 * @return DotCoreIntField
+	 */
+	public function getFieldContentPageID()
+	{
+		return $this->GetDAL()->GetField(DotCoreContentDAL::CONTENT_PAGE_ID);
+	}
 
-    /**
-     * Gets the field that defines the text of the content
-     * @return DotCoreStringField
-     */
-    public function getFieldText()
-    {
-        return $this->GetDAL()->GetField(DotCoreContentDAL::CONTENT_TEXT);
-    }
+	/**
+	 * Gets the field that defines the text of the content
+	 * @return DotCoreStringField
+	 */
+	public function getFieldText()
+	{
+		return $this->GetDAL()->GetField(DotCoreContentDAL::CONTENT_TEXT);
+	}
 
-    /**
-     *
-     * @return DotCoreDALFulltext
-     */
-    public function getContentFulltext() {
-        return $this->GetDAL()->GetFulltext(DotCoreContentDAL::CONTENT_FULLTEXT);
-    }
+	/**
+	 *
+	 * @return DotCoreDALFulltext
+	 */
+	public function getContentFulltext() {
+		return $this->GetDAL()->GetFulltext(DotCoreContentDAL::CONTENT_FULLTEXT);
+	}
 
-    /*
-     *
-     * Abstract Methods Implementation:
-     *
-     */
+	/*
+	 *
+	 * Abstract Methods Implementation:
+	 *
+	 */
 
-    /**
-     *
-     * @return DotCoreContentDAL
-     */
-    public static function GetDAL() {
-        return self::GetDALHelper('DotCoreContentDAL');
-    }
-    
-    /*
-     * 
-     * Link Methods
-     * 
-     */
+	/**
+	 *
+	 * @return DotCoreContentDAL
+	 */
+	public static function GetDAL() {
+		return self::GetDALHelper('DotCoreContentDAL');
+	}
+	
+	/*
+	 * 
+	 * Link Methods
+	 * 
+	 */
 
-    /**
-     * Links the pages DAL
-     *
-     * @return DotCoreOneToManyRelationship
-     */
-    public function LinkPages() {
-        $link = DotCoreDAL::GetRelationship(DotCoreContentDAL::PAGE_CONTENTS_LINK);
-        $this->AddLink($link);
-        return $link;
-    }
+	/**
+	 * Links the pages DAL
+	 *
+	 * @return DotCoreOneToManyRelationship
+	 */
+	public function LinkPages() {
+		$link = DotCoreDAL::GetRelationship(DotCoreContentDAL::PAGE_CONTENTS_LINK);
+		$this->AddLink($link);
+		return $link;
+	}
 
-    /**
-     * Gets the page of this content
-     *
-     * @param DotCoreContentRecord $content
-     * @return DotCorePageRecord
-     */
-    public static function GetPage(DotCoreContentRecord $content) {
-        return $content->GetLinkValue(DotCoreContentDAL::PAGE_CONTENTS_LINK);
-    }
+	/**
+	 * Gets the page of this content
+	 *
+	 * @param DotCoreContentRecord $content
+	 * @return DotCorePageRecord
+	 */
+	public static function GetPage(DotCoreContentRecord $content) {
+		return $content->GetLinkValue(DotCoreContentDAL::PAGE_CONTENTS_LINK);
+	}
 
-    /*
-     *
-     * Busines Logic Methods:
-     *
-     */
+	/*
+	 *
+	 * Busines Logic Methods:
+	 *
+	 */
 
-    /**
-     *
-     * @param int $id
-     * @return DotCorePageBLL
-     */
-    public function ByPageID($id)
-    {
-        $restraints = new DotCoreDALRestraint();
-        $restraints->AddRestraint(
-            new DotCoreFieldRestraint($this->getFieldContentPageID(), $id));
+	/**
+	 *
+	 * @param int $id
+	 * @return DotCorePageBLL
+	 */
+	public function ByPageID($id)
+	{
+		$restraints = new DotCoreDALRestraint();
+		$restraints->AddRestraint(
+			new DotCoreFieldRestraint($this->getFieldContentPageID(), $id));
 
-        return $this->Restraints($restraints);
-    }
+		return $this->Restraints($restraints);
+	}
 
 }
 ?>

@@ -7,19 +7,19 @@
  */
 class FeaturePHPContent extends DotCoreFeature
 {
-    public function __construct(DotCoreFeatureRecord $record, $parameters = array(), $content = NULL)
-    {
-        parent::__construct($record, $parameters, $content);
-    }
+	public function __construct(DotCoreFeatureRecord $record, $parameters = array(), $content = NULL)
+	{
+		parent::__construct($record, $parameters, $content);
+	}
 	
-    /**
-     * Shows the contact form to the user
-     *
-     */
-    public function GetFeatureContent()
-    {
-        return eval($this->getCreatingMarkupContent());
-    }
+	/**
+	 * Shows the contact form to the user
+	 *
+	 */
+	public function GetFeatureContent()
+	{
+		return eval($this->getCreatingMarkupContent());
+	}
 }
 
 ?>

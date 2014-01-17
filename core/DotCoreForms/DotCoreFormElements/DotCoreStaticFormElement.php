@@ -7,40 +7,40 @@
  */
 class DotCoreStaticFormElement extends DotCoreFormElement {
 
-    public function  __construct($name, $content = '') {
-        parent::__construct($name);
-        $this->SetStaticContent($content);
-    }
+	public function  __construct($name, $content = '') {
+		parent::__construct($name);
+		$this->SetStaticContent($content);
+	}
 
-    /**
-     * Stores the content shown in this form element
-     * @var string
-     */
-    private $static_content = '';
+	/**
+	 * Stores the content shown in this form element
+	 * @var string
+	 */
+	private $static_content = '';
 
-    /*
-     * Getter
-     */
+	/*
+	 * Getter
+	 */
 
-    public function GetStaticContent() {
-        return $this->static_content;
-    }
+	public function GetStaticContent() {
+		return $this->static_content;
+	}
 
-    /*
-     * Setter
-     */
+	/*
+	 * Setter
+	 */
 
-    public function SetStaticContent($content) {
-        $this->static_content = $content;
-    }
+	public function SetStaticContent($content) {
+		$this->static_content = $content;
+	}
 
-    /*
-     * Override
-     */
+	/*
+	 * Override
+	 */
 
-    protected function __toString() {
-        return $this->static_content;
-    }
-    
+	protected function __toString() {
+		return $this->static_content;
+	}
+	
 }
 ?>

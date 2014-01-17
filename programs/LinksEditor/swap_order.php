@@ -2,9 +2,9 @@
 
 if(!isset($_REQUEST['link1']) || !isset($_REQUEST['link2']))
 {
-    header('HTTP/1.0 400 Bad Request');
-    echo ('No links provided.');
-    exit;
+	header('HTTP/1.0 400 Bad Request');
+	echo ('No links provided.');
+	exit;
 }
 
 // Include the basic things .CORE scripts require
@@ -17,9 +17,9 @@ $link2 = $link_bll->ByLinkID($_REQUEST['link2'])->SelectFirstOrNull();
 
 if($link1 == NULL || $link2 == NULL)
 {
-    header('HTTP/1.0 400 Bad Request');
-    echo ('Invalid links provided.');
-    exit;
+	header('HTTP/1.0 400 Bad Request');
+	echo ('Invalid links provided.');
+	exit;
 }
 
 $link_bll->BeginTransaction($link1);

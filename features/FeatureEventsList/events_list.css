@@ -1,25 +1,25 @@
 .events-nav {
-    text-align: center;
+	text-align: center;
 }
 
 .more-details{
-    display: block;
+	display: block;
 }
 
 .events-search-results li{
-    margin-top: 10px;
-    border-top: 1px dashed #AEAEAE;
-    padding-top: 10px;
+	margin-top: 10px;
+	border-top: 1px dashed #AEAEAE;
+	padding-top: 10px;
 }
 
 .events-search-results .first {
-    border-top: none;
+	border-top: none;
 }
 
 .events-search-results{
-    float: none !important;
+	float: none !important;
 }
 
 .event-contents{
-    padding-top: 5px;
+	padding-top: 5px;
 }

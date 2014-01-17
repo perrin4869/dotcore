@@ -7,45 +7,45 @@
  */
 class DotCoreFeaturesCommandsRecord extends DotCoreDataRecord {
 
-    /**
-     * Constructor for Feature Commands records
-     *
-     * @param DotCoreDAL $dal
-     */
-    public function  __construct(DotCoreDAL $dal) {
-        parent::__construct($dal);
-    }
+	/**
+	 * Constructor for Feature Commands records
+	 *
+	 * @param DotCoreDAL $dal
+	 */
+	public function  __construct(DotCoreDAL $dal) {
+		parent::__construct($dal);
+	}
 
-    /*
-     *
-     * Accessors:
-     *
-     */
-    
-    /*
-     * Getters:
-     */
+	/*
+	 *
+	 * Accessors:
+	 *
+	 */
+	
+	/*
+	 * Getters:
+	 */
 
-    public function getFeatureID() {
-        return $this->GetField(DotCoreFeaturesCommandsDAL::FEATURES_COMMANDS_FEATURE_ID);
-    }
+	public function getFeatureID() {
+		return $this->GetField(DotCoreFeaturesCommandsDAL::FEATURES_COMMANDS_FEATURE_ID);
+	}
 
-    public function getFeatureCommand() {
-        return $this->GetField(DotCoreFeaturesCommandsDAL::FEATURES_COMMANDS_COMMAND);
-    }
+	public function getFeatureCommand() {
+		return $this->GetField(DotCoreFeaturesCommandsDAL::FEATURES_COMMANDS_COMMAND);
+	}
 
-    /*
-     * Setters:
-     */
+	/*
+	 * Setters:
+	 */
 
 
-    private function setFeatureID($val) {
-        $this->SetField(DotCoreFeaturesCommandsDAL::FEATURES_COMMANDS_FEATURE_ID, $val);
-    }
+	private function setFeatureID($val) {
+		$this->SetField(DotCoreFeaturesCommandsDAL::FEATURES_COMMANDS_FEATURE_ID, $val);
+	}
 
-    public function setFeatureCommand($command) {
-        $this->SetField(DotCoreFeaturesCommandsDAL::FEATURES_COMMANDS_COMMAND, $command);
-    }
+	public function setFeatureCommand($command) {
+		$this->SetField(DotCoreFeaturesCommandsDAL::FEATURES_COMMANDS_COMMAND, $command);
+	}
 
 }
 ?>

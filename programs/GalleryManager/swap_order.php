@@ -2,9 +2,9 @@
 
 if(!isset($_REQUEST['img1']) || !isset($_REQUEST['img2']))
 {
-    header('HTTP/1.0 400 Bad Request');
-    echo ('No links provided.');
-    exit;
+	header('HTTP/1.0 400 Bad Request');
+	echo ('No links provided.');
+	exit;
 }
 
 $gallery_image_bll = new DotCoreGalleryImageBLL();
@@ -14,9 +14,9 @@ $img2 = $gallery_image_bll->ByImageID($_REQUEST['img2'])->SelectFirstOrNull();
 
 if($img1 == NULL || $img2 == NULL)
 {
-    header('HTTP/1.0 400 Bad Request');
-    echo ('Invalid links provided.');
-    exit;
+	header('HTTP/1.0 400 Bad Request');
+	echo ('Invalid links provided.');
+	exit;
 }
 
 $gallery_image_bll->BeginTransaction($img1);

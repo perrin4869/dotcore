@@ -1,6 +1,6 @@
 <?php
 $messages = array();
-        
+		
 $messages['contact_us_subject'] = array();
 $messages['contact_us_subject'][DotCoreMessages::VALUES] = array(
 	'en' => 'Contact Us Form - Israel Packages',

@@ -1,55 +1,55 @@
 /* 
-    Document   : feature_links
-    Created on : Aug 12, 2009, 8:57:08 PM
-    Author     : perrin
-    Description:
-        Styles for the links features
+	Document   : feature_links
+	Created on : Aug 12, 2009, 8:57:08 PM
+	Author	 : perrin
+	Description:
+		Styles for the links features
 */
 
 .links_list {
-    list-style: disc;
+	list-style: disc;
 }
 
 .links_list li{
-    margin-top: 10px;
-    border-top: 1px dashed #AEAEAE;
-    padding-top: 10px;
+	margin-top: 10px;
+	border-top: 1px dashed #AEAEAE;
+	padding-top: 10px;
 }
 
 .links_list li h3 a:link, .links_list li h3 a:visited{
-    text-decoration: underline;
-    color: #1122DD;
+	text-decoration: underline;
+	color: #1122DD;
 }
 
 .links_list li a:link, .links_list li a:visited{
-    text-decoration: none;
-    font-weight: bold;
-    color: #335D6F;
+	text-decoration: none;
+	font-weight: bold;
+	color: #335D6F;
 }
 
 .links_list li.first_link {
-    border-top: none;
+	border-top: none;
 }
 
 .links_list{
-    float: none !important;
+	float: none !important;
 }
 
 .links_list h3{
-    margin: 0px !important;
-    padding: 0px !important;
+	margin: 0px !important;
+	padding: 0px !important;
 }
 
 .links_list p{
-    margin: 0px !important;
-    padding: 0px !important;
+	margin: 0px !important;
+	padding: 0px !important;
 }
 
 .links_list a.url{
-    direction: ltr;
-    display: block;
+	direction: ltr;
+	display: block;
 }
 
 .links_pager {
-    text-align: center;
+	text-align: center;
 }

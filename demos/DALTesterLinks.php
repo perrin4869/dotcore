@@ -64,7 +64,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/custom/components.php');
 
 include ($_SERVER['DOCUMENT_ROOT'] . '/custom/classes/profiling-2006-02-28/class_profiling.inc.php');
 $profiler = new profiling();
-    
+	
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -82,160 +82,160 @@ $profiler->add('Start<br/><br/>');
 
 for($j = 0; $j < 1; $j++)
 {
-    /*
-    // Let's try the links!
-    // One to many links
-    $chamber_contact_bll = new ChamberEilatContactMemberBLL();
-    $dotcore_contact_bll = new DotCoreContactMemberBLL();
+	/*
+	// Let's try the links!
+	// One to many links
+	$chamber_contact_bll = new ChamberEilatContactMemberBLL();
+	$dotcore_contact_bll = new DotCoreContactMemberBLL();
 
-    $link_restraint = new DotCoreDALRestraint();
-    $link_restraint->AddRestraint(
-        new DotCoreLinkRestraint(
-            $dotcore_contact_bll->getFieldContactID(),
-            $chamber_contact_bll->getFieldContactID()));
+	$link_restraint = new DotCoreDALRestraint();
+	$link_restraint->AddRestraint(
+		new DotCoreLinkRestraint(
+			$dotcore_contact_bll->getFieldContactID(),
+			$chamber_contact_bll->getFieldContactID()));
 
-    $chamber_contact_bll->AddLink(
-        new DotCoreOneToOneRelationship($dotcore_contact_bll, $link_restraint));
+	$chamber_contact_bll->AddLink(
+		new DotCoreOneToOneRelationship($dotcore_contact_bll, $link_restraint));
 
-    $contacts = $chamber_contact_bll
-        ->Fields(array(
-                $dotcore_contact_bll->getFieldEmail(),
-                $chamber_contact_bll->getFieldContactName(),
-                $chamber_contact_bll->getFieldContactPhone()))
-        ->Select();
+	$contacts = $chamber_contact_bll
+		->Fields(array(
+				$dotcore_contact_bll->getFieldEmail(),
+				$chamber_contact_bll->getFieldContactName(),
+				$chamber_contact_bll->getFieldContactPhone()))
+		->Select();
 
-    $count_contacts = count($contacts);
-    for($i = 0; $i < $count_contacts; $i++){
-        $contact = $contacts[$i];
-        $dotcore_contact = $contact->GetDotCoreContactMember();
+	$count_contacts = count($contacts);
+	for($i = 0; $i < $count_contacts; $i++){
+		$contact = $contacts[$i];
+		$dotcore_contact = $contact->GetDotCoreContactMember();
 
-        echo '
-            Contact ID:' . $dotcore_contact->getContactMemberID() . '<br />
-            Contact Email: ' . $dotcore_contact->getContactMemberEmail() . '<br />
-            Contact Name: ' . $contact->getContactMemberName() . '<br />
-            Contact Phone: ' . $contact->getContactMemberPhone() .'
-            <br /><br />';
-    }
-    *
-     * 
-     */
+		echo '
+			Contact ID:' . $dotcore_contact->getContactMemberID() . '<br />
+			Contact Email: ' . $dotcore_contact->getContactMemberEmail() . '<br />
+			Contact Name: ' . $contact->getContactMemberName() . '<br />
+			Contact Phone: ' . $contact->getContactMemberPhone() .'
+			<br /><br />';
+	}
+	*
+	 * 
+	 */
 
-    /*
-     *
-    $query = '
-        SELECT dotcore_contact_list.contact_id, dotcore_contact_list.email, chamber_eilat_contact_list.contact_name
-        FROM dotcore_contact_list
-        INNER JOIN chamber_eilat_contact_list on chamber_eilat_contact_list.contact_id = dotcore_contact_list.contact_id';
-    $mysql = new DotCoreMySql();
+	/*
+	 *
+	$query = '
+		SELECT dotcore_contact_list.contact_id, dotcore_contact_list.email, chamber_eilat_contact_list.contact_name
+		FROM dotcore_contact_list
+		INNER JOIN chamber_eilat_contact_list on chamber_eilat_contact_list.contact_id = dotcore_contact_list.contact_id';
+	$mysql = new DotCoreMySql();
 
-    $mysql->PerformQuery($query);
-    while($row = $mysql->FetchRow())
-    {
-        echo '
-            Contact ID:' . $row['contact_id'] . '<br />
-            Contact Email: ' . $row['email'] . '<br />
-            Contact Name: ' . $row['contact_name'] . '
-            <br /><br />';
-    }
-     */
-     
+	$mysql->PerformQuery($query);
+	while($row = $mysql->FetchRow())
+	{
+		echo '
+			Contact ID:' . $row['contact_id'] . '<br />
+			Contact Email: ' . $row['email'] . '<br />
+			Contact Name: ' . $row['contact_name'] . '
+			<br /><br />';
+	}
+	 */
+	 
 }
 
 // Let's try a one to many relation now
 
 for($j = 0; $j < 1; $j++)
 {
-    // Let's try the links!
-    // One to many links
+	// Let's try the links!
+	// One to many links
 
-    /*
-     * 
-    $pages_bll = new DotCorePageBLL();
-    $languages_bll = new DotCoreLanguageBLL();
+	/*
+	 * 
+	$pages_bll = new DotCorePageBLL();
+	$languages_bll = new DotCoreLanguageBLL();
 
-    $link_restraint = new DotCoreDALRestraint();
-    $link_restraint->AddRestraint(
-        new DotCoreLinkRestraint(
-            $languages_bll->getFieldLanguageID(),
-            $pages_bll->getFieldPageID()));
+	$link_restraint = new DotCoreDALRestraint();
+	$link_restraint->AddRestraint(
+		new DotCoreLinkRestraint(
+			$languages_bll->getFieldLanguageID(),
+			$pages_bll->getFieldPageID()));
 
-    $pages_bll->AddLink(
-        new DotCoreOneToManyRelationship($languages_bll, $link_restraint));
+	$pages_bll->AddLink(
+		new DotCoreOneToManyRelationship($languages_bll, $link_restraint));
 
-    $pages = $pages_bll
-        ->Fields(array(
-                $pages_bll->getFieldName(),
-                $pages_bll->getFieldUrl(),
-                $languages_bll->getFieldLanguageCode()))
-        ->Select();
+	$pages = $pages_bll
+		->Fields(array(
+				$pages_bll->getFieldName(),
+				$pages_bll->getFieldUrl(),
+				$languages_bll->getFieldLanguageCode()))
+		->Select();
 
-    $count_pages = count($pages);
-    for($i = 0; $i < $count_pages; $i++){
-        $page = $pages[$i];
-        $lang = $page->GetPageLanguage();
+	$count_pages = count($pages);
+	for($i = 0; $i < $count_pages; $i++){
+		$page = $pages[$i];
+		$lang = $page->GetPageLanguage();
 
-        echo '
-            Page Name:' . $page->getName() . '<br />
-            Page Url: ' . $page->getUrl() . '<br />
-            Language Code: ' . $lang->GetLanguageCode() .'
-            <br /><br />';
-    }
-     * 
-     */
+		echo '
+			Page Name:' . $page->getName() . '<br />
+			Page Url: ' . $page->getUrl() . '<br />
+			Language Code: ' . $lang->GetLanguageCode() .'
+			<br /><br />';
+	}
+	 * 
+	 */
 }
 
 // Many to many links
 for($j = 0; $j < 1; $j++)
 {
-    /*
-    $admins_bll = new DotCoreAdminBLL();
-    $users_bll = $admins_bll->LinkUsersDAL()->GetLinkedDAL();
-    $roles_bll = $admins_bll->LinkRolesDAL()->GetLinkedDAL();
-    $roles_multilang_bll = $roles_bll->LinkRolesMultilangDAL()->GetLinkedDAL();
-    $languages_bll = $roles_multilang_bll->LinkLanguagesDAL()->GetLinkedDAL();
+	/*
+	$admins_bll = new DotCoreAdminBLL();
+	$users_bll = $admins_bll->LinkUsersDAL()->GetLinkedDAL();
+	$roles_bll = $admins_bll->LinkRolesDAL()->GetLinkedDAL();
+	$roles_multilang_bll = $roles_bll->LinkRolesMultilangDAL()->GetLinkedDAL();
+	$languages_bll = $roles_multilang_bll->LinkLanguagesDAL()->GetLinkedDAL();
 
-    $admins = $admins_bll
-        ->Fields(array(
-                $users_bll->getFieldUserName(),
-                $users_bll->getFieldEmail(),
-                $roles_bll->getFieldDesc(),
-                $roles_multilang_bll->getFieldRoleName(),
-                $languages_bll->getFieldLanguageCode()))
-        ->Select();
+	$admins = $admins_bll
+		->Fields(array(
+				$users_bll->getFieldUserName(),
+				$users_bll->getFieldEmail(),
+				$roles_bll->getFieldDesc(),
+				$roles_multilang_bll->getFieldRoleName(),
+				$languages_bll->getFieldLanguageCode()))
+		->Select();
 
-    $count_admins = count($admins);
-    for($i = 0; $i < $count_admins; $i++){
-        $admin = $admins[$i];
-        $user = $admin->GetUser();
-        $roles = $admin->GetRoles();
+	$count_admins = count($admins);
+	for($i = 0; $i < $count_admins; $i++){
+		$admin = $admins[$i];
+		$user = $admin->GetUser();
+		$roles = $admin->GetRoles();
 
-        echo '
-        <ul><li>
-            Username:' . $user->getUserName() . '<br />
-            User Email: ' . $user->getUserEmail() . '<br />
-            Roles: <ul>';
-            foreach($roles as $role)
-            {
-                echo '<li>Role Desc: '.$role->getRoleDesc().'</li>';
-                $multilang_role_properties = $role->GetRolesMultilanguageProperties();
-                echo '<ul>';
-                foreach($multilang_role_properties as $lang_role_properties)
-                {
-                    echo '
-                        <li>
-                            Lang ID: ' . $lang_role_properties->getLanguageID() . '<br />
-                            Lang Code: ' . $lang_role_properties->GetLanguage()->getLanguageCode() . '<br />
-                            Role Name: ' . $lang_role_properties->getRoleName() .'
-                        </li>';
-                }
-                echo '</ul>';
-            }
-            echo '</ul>';
-        echo '
-        </li></ul>';
-    }
-     * 
-     */
+		echo '
+		<ul><li>
+			Username:' . $user->getUserName() . '<br />
+			User Email: ' . $user->getUserEmail() . '<br />
+			Roles: <ul>';
+			foreach($roles as $role)
+			{
+				echo '<li>Role Desc: '.$role->getRoleDesc().'</li>';
+				$multilang_role_properties = $role->GetRolesMultilanguageProperties();
+				echo '<ul>';
+				foreach($multilang_role_properties as $lang_role_properties)
+				{
+					echo '
+						<li>
+							Lang ID: ' . $lang_role_properties->getLanguageID() . '<br />
+							Lang Code: ' . $lang_role_properties->GetLanguage()->getLanguageCode() . '<br />
+							Role Name: ' . $lang_role_properties->getRoleName() .'
+						</li>';
+				}
+				echo '</ul>';
+			}
+			echo '</ul>';
+		echo '
+		</li></ul>';
+	}
+	 * 
+	 */
 }
 
 $profiler->end();

@@ -7,12 +7,12 @@
  */
 class DotCoreUrlFormElement extends DotCoreTextFormElement {
 
-    public function  __construct($name) {
-        parent::__construct($name);
+	public function  __construct($name) {
+		parent::__construct($name);
 
-        $this->SetDefaultValue('http://');
-        $this->AddClass('url-field');
-    }
-    
+		$this->SetDefaultValue('http://');
+		$this->AddClass('url-field');
+	}
+	
 }
 ?>

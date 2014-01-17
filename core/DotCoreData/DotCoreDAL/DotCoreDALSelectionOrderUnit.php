@@ -8,17 +8,17 @@
  */
 abstract class DotCoreDALSelectionOrderUnit {
 
-    /**
-     * Constructor for DotCoreDALSelectionOrderUnit
-     */
-    public function  __construct() {
-        
-    }
+	/**
+	 * Constructor for DotCoreDALSelectionOrderUnit
+	 */
+	public function  __construct() {
+		
+	}
 
-    /**
-     * Returns the SQL statement that is used to achieve the order described by this unit
-     */
-    abstract public function GetStatement();
+	/**
+	 * Returns the SQL statement that is used to achieve the order described by this unit
+	 */
+	abstract public function GetStatement();
 
 }
 ?>

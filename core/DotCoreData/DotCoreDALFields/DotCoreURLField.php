@@ -9,25 +9,25 @@ class InvalidURLException extends DotCoreException {}
  */
 class DotCoreURLField extends DotCorePlainStringField
 {
-    public function __construct(
-        $field_name,
-        DotCoreDAL $dal,
-        $is_nullable = TRUE)
-    {
-        parent::__construct($field_name, $dal, $is_nullable);
-    }
+	public function __construct(
+		$field_name,
+		DotCoreDAL $dal,
+		$is_nullable = TRUE)
+	{
+		parent::__construct($field_name, $dal, $is_nullable);
+	}
 	
-    public function Validate(DotCoreDataRecord $record, &$new_val)
-    {
-        $result = parent::Validate($record, $new_val);
+	public function Validate(DotCoreDataRecord $record, &$new_val)
+	{
+		$result = parent::Validate($record, $new_val);
 
-        if(!$this->IsEmpty($new_val) && !is_url($new_val))
-        {
-            throw new InvalidURLException();
-        }
+		if(!$this->IsEmpty($new_val) && !is_url($new_val))
+		{
+			throw new InvalidURLException();
+		}
 
-        return $result;
-    }
+		return $result;
+	}
 	
 }
 

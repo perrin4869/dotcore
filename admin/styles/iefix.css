@@ -1,9 +1,9 @@
 /* 
-    Document   : iefix
-    Created on : Aug 29, 2009, 11:47:37 PM
-    Author     : perrin
-    Description:
-        Purpose of the stylesheet follows.
+	Document   : iefix
+	Created on : Aug 29, 2009, 11:47:37 PM
+	Author	 : perrin
+	Description:
+		Purpose of the stylesheet follows.
 */
 
 /* 
@@ -12,5 +12,5 @@
 */
 
 .datagrid td img{
-    width: expression(this.offsetWidth > 300 ? "300px" : "auto");
+	width: expression(this.offsetWidth > 300 ? "300px" : "auto");
 }

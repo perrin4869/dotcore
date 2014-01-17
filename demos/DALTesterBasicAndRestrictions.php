@@ -5,37 +5,37 @@ $newsBLL = new DotCoreNewsBLL();
 
 $restraint = new DotCoreDALRestraint();
 $restraint
-    ->AddRestraint(
-        new DotCoreFieldRestraint($newsBLL->getFieldShortContent(), '%של%', DotCoreFieldRestraint::OPERATION_LIKE))
-    ->ChangeRestraintAddingMethod(DotCoreDALRestraint::RESTRAINT_ADDING_METHOD_OR)
-    ->OpenRestrainingUnit()
-    ->AddRestraint(
-        new DotCoreFieldRestraint($newsBLL->getFieldNewsID(), 3, DotCoreFieldRestraint::OPERATION_GREATER_OR_EQUAL))
-    ->ChangeRestraintAddingMethod(DotCoreDALRestraint::RESTRAINT_ADDING_METHOD_AND)
-    ->AddRestraint(
-        new DotCoreFieldRestraint($newsBLL->getFieldNewsID(), 11, DotCoreFieldRestraint::OPERATION_LESS_OR_EQUAL))
-    ->CloseRestrainingUnit();
+	->AddRestraint(
+		new DotCoreFieldRestraint($newsBLL->getFieldShortContent(), '%של%', DotCoreFieldRestraint::OPERATION_LIKE))
+	->ChangeRestraintAddingMethod(DotCoreDALRestraint::RESTRAINT_ADDING_METHOD_OR)
+	->OpenRestrainingUnit()
+	->AddRestraint(
+		new DotCoreFieldRestraint($newsBLL->getFieldNewsID(), 3, DotCoreFieldRestraint::OPERATION_GREATER_OR_EQUAL))
+	->ChangeRestraintAddingMethod(DotCoreDALRestraint::RESTRAINT_ADDING_METHOD_AND)
+	->AddRestraint(
+		new DotCoreFieldRestraint($newsBLL->getFieldNewsID(), 11, DotCoreFieldRestraint::OPERATION_LESS_OR_EQUAL))
+	->CloseRestrainingUnit();
 
 $order = new DotCoreDALSelectionOrder();
 $order
-    ->AddOrderUnit(
-        new DotCoreFieldSelectionOrder(
-            $newsBLL->getFieldNewsID(),
-            DotCoreFieldSelectionOrder::DIRECTION_DESC));
+	->AddOrderUnit(
+		new DotCoreFieldSelectionOrder(
+			$newsBLL->getFieldNewsID(),
+			DotCoreFieldSelectionOrder::DIRECTION_DESC));
 
 $records = $newsBLL
-    ->Restraints($restraint)
-    ->Order($order)
-    ->Offset(2)
-    ->Limit(2)
-    ->Select();
+	->Restraints($restraint)
+	->Order($order)
+	->Offset(2)
+	->Limit(2)
+	->Select();
 
 foreach($records as $record)
 {
-    echo 'ID: ' . $record->getID();
-    echo '<br />';
-    echo 'Short: ' . $record->getNewsShortContent();
-    echo '<br /><br />';
+	echo 'ID: ' . $record->getID();
+	echo '<br />';
+	echo 'Short: ' . $record->getNewsShortContent();
+	echo '<br /><br />';
 }
 
 echo '<strong>Insertion/Update test:</strong><br />';
@@ -55,8 +55,8 @@ $record->setNewsShortContent('Short');
 $eventsBLL = new ChamberEilatEventBLL();
 $restraint = new DotCoreDALRestraint();
 $restraint
-    ->AddRestraint(
-        new DotCoreFulltextRestraint($eventsBLL->getSearchFulltext(), 'ארצות הברית'));
+	->AddRestraint(
+		new DotCoreFulltextRestraint($eventsBLL->getSearchFulltext(), 'ארצות הברית'));
 
 $results = $eventsBLL->Restraints($restraint)->Select();
 
@@ -67,10 +67,10 @@ echo '<strong>Events Searching Test:</strong> <br />';
 echo count($results) . ' Results:<br />';
 foreach($results as $result)
 {
-    echo 'ID: ' . $result->getEventID();
-    echo '<br />';
-    echo 'Details: ' . $result->getEventDetails();
-    echo '<br /><br />';
+	echo 'ID: ' . $result->getEventID();
+	echo '<br />';
+	echo 'Details: ' . $result->getEventDetails();
+	echo '<br /><br />';
 }
 
 echo '<br /><br />';

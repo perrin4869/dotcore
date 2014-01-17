@@ -13,8 +13,8 @@ include ($core_folder . 'DotCore/include.php');
  * @param string $path_from_core_root
  */
 function register_core_component($component_name, $path_from_core_root) {
-    global $core_folder;
-    DotCoreExternalComponentsAutoloader::RegisterComponent($component_name, $core_folder . $path_from_core_root);
+	global $core_folder;
+	DotCoreExternalComponentsAutoloader::RegisterComponent($component_name, $core_folder . $path_from_core_root);
 }
 
 // Events

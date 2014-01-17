@@ -7,52 +7,52 @@
  */
 class DotCoreRoleMultilangRecord extends DotCoreDataRecord {
 
-    /**
-     * Constructor for DotCoreRoleMultilang record
-     *
-     * @param DotCoreDAL $dal
-     */
-    public function  __construct(DotCoreDAL $dal) {
-        parent::__construct($dal);
-    }
+	/**
+	 * Constructor for DotCoreRoleMultilang record
+	 *
+	 * @param DotCoreDAL $dal
+	 */
+	public function  __construct(DotCoreDAL $dal) {
+		parent::__construct($dal);
+	}
 
-    /*
-     *
-     * Accessors:
-     *
-     */
+	/*
+	 *
+	 * Accessors:
+	 *
+	 */
 
-    /*
-     * Getters:
-     */
+	/*
+	 * Getters:
+	 */
 
-    public function getRoleID() {
-        return $this->GetField(DotCoreRoleMultilangDAL::ROLE_ID);
-    }
+	public function getRoleID() {
+		return $this->GetField(DotCoreRoleMultilangDAL::ROLE_ID);
+	}
 
-    public function getRoleName() {
-        return $this->GetField(DotCoreRoleMultilangDAL::ROLE_NAME);
-    }
+	public function getRoleName() {
+		return $this->GetField(DotCoreRoleMultilangDAL::ROLE_NAME);
+	}
 
-    public function getLanguageID() {
-        return $this->GetField(DotCoreRoleMultilangDAL::LANGUAGE_ID);
-    }
+	public function getLanguageID() {
+		return $this->GetField(DotCoreRoleMultilangDAL::LANGUAGE_ID);
+	}
 
 	/*
 	* Setters:
 	*/
 
-    private function setRoleID($val) {
-        $this->SetField(DotCoreRoleMultilangDAL::ROLE_ID, $val);
-    }
+	private function setRoleID($val) {
+		$this->SetField(DotCoreRoleMultilangDAL::ROLE_ID, $val);
+	}
 
-    private function setRoleName($val) {
-        $this->SetField(DotCoreRoleMultilangDAL::ROLE_NAME, $val);
-    }
+	private function setRoleName($val) {
+		$this->SetField(DotCoreRoleMultilangDAL::ROLE_NAME, $val);
+	}
 
-    public function setLanguageID($val) {
-        $this->SetField(DotCoreRoleMultilangDAL::LANGUAGE_ID, $val);
-    }
+	public function setLanguageID($val) {
+		$this->SetField(DotCoreRoleMultilangDAL::LANGUAGE_ID, $val);
+	}
 
 }
 ?>

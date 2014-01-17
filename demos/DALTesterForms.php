@@ -64,7 +64,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/custom/components.php');
 
 include ($_SERVER['DOCUMENT_ROOT'] . '/custom/classes/profiling-2006-02-28/class_profiling.inc.php');
 $profiler = new profiling();
-    
+	
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -75,27 +75,27 @@ $profiler = new profiling();
 
 <style type="text/css">
 
-    body{
-        margin: 0px;
-        padding: 0px;
-    }
+	body{
+		margin: 0px;
+		padding: 0px;
+	}
 
-    .RightToLeftInput {
-        direction: rtl;
-    }
+	.RightToLeftInput {
+		direction: rtl;
+	}
 
-    .LeftToRightInput {
-        direction: ltr;
-    }
+	.LeftToRightInput {
+		direction: ltr;
+	}
 
-    textarea {
-        width: 300px;
-        height: 200px;
-    }
+	textarea {
+		width: 300px;
+		height: 200px;
+	}
 
-    .richtext {
-        width: 99%;
-    }
+	.richtext {
+		width: 99%;
+	}
 
 </style>
 
@@ -129,24 +129,24 @@ $multilangRolesBLL = $multilangRolesLink->GetLinkedDAL();
 $multilangRolesLink->SetKeyField($multilangRolesBLL->getFieldLanguageID());
 
 $roles =
-    $rolesBLL
-        ->Fields(array(
-            $rolesBLL->getFieldRoleID(),
-            $multilangRolesBLL->getFieldRoleName()))
-        ->Select();
+	$rolesBLL
+		->Fields(array(
+			$rolesBLL->getFieldRoleID(),
+			$multilangRolesBLL->getFieldRoleName()))
+		->Select();
 
 $languagesBLL = new DotCoreLanguageBLL();
 $languages =
-    $languagesBLL
-        ->Fields(array($languagesBLL->getFieldLanguageCode()))
-        ->GetLanguagesCodeDictionary();
+	$languagesBLL
+		->Fields(array($languagesBLL->getFieldLanguageCode()))
+		->GetLanguagesCodeDictionary();
 
 $rolesDictionary = array();
 $countRoles = count($roles);
 for($i = 0; $i < $countRoles; $i++)
 {
-    $multilangRoles = $roles[$i]->GetRolesMultilanguageProperties();
-    $rolesDictionary[$roles[$i]->getRoleID()] = $multilangRoles[$languages['he']->getLanguageID()]->getRoleName();
+	$multilangRoles = $roles[$i]->GetRolesMultilanguageProperties();
+	$rolesDictionary[$roles[$i]->getRoleID()] = $multilangRoles[$languages['he']->getLanguageID()]->getRoleName();
 }
 
 $text_input = new DotCoreTextFormElement('text1', 'Label 1');
@@ -161,10 +161,10 @@ $rich_input = new DotCoreRichTextFormElement('richEditor', 'Rich Editor');
 $password_input = new DotCorePasswordFormElement('passwordElement', 'Password');
 
 $password_validation = 
-    new DotCorePasswordConfirmationFormElement(
-        'passwordElementValidation',
-        'Password Confirmation',
-        $password_input);
+	new DotCorePasswordConfirmationFormElement(
+		'passwordElementValidation',
+		'Password Confirmation',
+		$password_input);
 
 $static_element = new DotCoreStaticFormElement('staticElement', 'Static Label', 'Static Content');
 
@@ -197,19 +197,19 @@ $form->AddFormElement($submit_element);
 
 if($form->WasSubmitted())
 {
-    if(!$password_validation->IsValid())
-    {
-        $password_input->SetError('The passwords don\'t match!');
-    }
+	if(!$password_validation->IsValid())
+	{
+		$password_input->SetError('The passwords don\'t match!');
+	}
 
-    if($checkbox_element->GetValue())
-    {
-        $checkbox_element->SetError('CHECKED');
-    }
-    else
-    {
-        $checkbox_element->SetError('Not Checked');
-    }
+	if($checkbox_element->GetValue())
+	{
+		$checkbox_element->SetError('CHECKED');
+	}
+	else
+	{
+		$checkbox_element->SetError('Not Checked');
+	}
 }
 
 echo $form;

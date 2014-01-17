@@ -1,12 +1,12 @@
 <?php
 // +------------------------------------------------------------------------+
-// | DotCoreConfiguration.php                                               |
+// | DotCoreConfiguration.php											   |
 // +------------------------------------------------------------------------+
-// | Copyright (c) Julian Grinblat 2009. All rights reserved.               |
-// | Version       0.01                                                     |
-// | Last modified 01/03/2010                                               |
-// | Email         juliangrinblat@gmail.com                                 |
-// | Web           http://www.dotcore.co.il                                 |
+// | Copyright (c) Julian Grinblat 2009. All rights reserved.			   |
+// | Version	   0.01													 |
+// | Last modified 01/03/2010											   |
+// | Email		 juliangrinblat@gmail.com								 |
+// | Web		   http://www.dotcore.co.il								 |
 // +------------------------------------------------------------------------+
 
 /**
@@ -14,97 +14,97 @@
  * Implements an API for the management of configuration files
  *
  * @version   0.01
- * @author    Julian Grinblat <juliangrinblat@gmail.com>
+ * @author	Julian Grinblat <juliangrinblat@gmail.com>
  * @copyright Julian Grinblat
  * @package   DotCore Project
  * @subpackage external
  */
 class DotCoreConfiguration extends DotCoreObject {
 
-    public function __construct($filename) {
-        $this->filename = $filename;
-        $this->Parse();
-    }
+	public function __construct($filename) {
+		$this->filename = $filename;
+		$this->Parse();
+	}
 
-    protected function Parse() {
-        include($this->filename);
+	protected function Parse() {
+		include($this->filename);
 
-        foreach($config as $name=>$field) {
-            $type = $field[self::FIELD_TYPE];
-            if(key_exists($type, self::$types_classes_dictionary)) {
-                $type_class = self::$types_classes_dictionary[$type];
-                $field = new $type_class($name, $field);
-                $this->AddField($field);
-            }
-            else {
-                throw new InvalidConfigurationTypeException();
-            }
-        }
-    }
+		foreach($config as $name=>$field) {
+			$type = $field[self::FIELD_TYPE];
+			if(key_exists($type, self::$types_classes_dictionary)) {
+				$type_class = self::$types_classes_dictionary[$type];
+				$field = new $type_class($name, $field);
+				$this->AddField($field);
+			}
+			else {
+				throw new InvalidConfigurationTypeException();
+			}
+		}
+	}
 
-    // Field declaration
-    private $filename = NULL;
-    private $fields = array();
-    
-    private static $types_classes_dictionary = array();
+	// Field declaration
+	private $filename = NULL;
+	private $fields = array();
+	
+	private static $types_classes_dictionary = array();
 
-    // Constant values for configuration files
-    const FIELD_TYPE = 'type';
-    const FIELD_ATTRIBUTES = 'attributes';
-    const FIELD_VALUE = 'value';
+	// Constant values for configuration files
+	const FIELD_TYPE = 'type';
+	const FIELD_ATTRIBUTES = 'attributes';
+	const FIELD_VALUE = 'value';
 
-    public static function AddType($type, $classname) {
-        self::$types_classes_dictionary[$type] = $classname;
-    }
+	public static function AddType($type, $classname) {
+		self::$types_classes_dictionary[$type] = $classname;
+	}
 
-    public static function RemoveType($type) {
-        unset(self::$type_classes_dictionary[$type]);
-    }
+	public static function RemoveType($type) {
+		unset(self::$type_classes_dictionary[$type]);
+	}
 
-    public static function HasType($type) {
-        return key_exists($type, self::$type_classes_dictionary);
-    }
+	public static function HasType($type) {
+		return key_exists($type, self::$type_classes_dictionary);
+	}
 
-    public static function GetTypes() {
-        return self::$type_classes_dictionary;
-    }
+	public static function GetTypes() {
+		return self::$type_classes_dictionary;
+	}
 
-    public function AddField(DotCoreConfigurationField $field) {
-        $this->fields[$field->GetName()] = $field;
-    }
+	public function AddField(DotCoreConfigurationField $field) {
+		$this->fields[$field->GetName()] = $field;
+	}
 
-    public function GetField($field_name) {
-        return $this->fields[$field_name];
-    }
+	public function GetField($field_name) {
+		return $this->fields[$field_name];
+	}
 
-    public function GetFields() {
-        return $this->fields;
-    }
+	public function GetFields() {
+		return $this->fields;
+	}
 
-    public function GetValue($field_name) {
-        return $this->fields[$field_name]->GetValue();
-    }
+	public function GetValue($field_name) {
+		return $this->fields[$field_name]->GetValue();
+	}
 
-    public function SaveChanges($filename = NULL) {
-        if($filename === NULL) {
-            $filename = $this->filename;
-        }
+	public function SaveChanges($filename = NULL) {
+		if($filename === NULL) {
+			$filename = $this->filename;
+		}
 
-        $result = '';
-        $result .= '<?php
+		$result = '';
+		$result .= '<?php
 
 $config = array();
 
 ';
 
-        foreach($this->fields as $field) {
-            $result .= $field->SerializeToArray();
-        }
+		foreach($this->fields as $field) {
+			$result .= $field->SerializeToArray();
+		}
 
-        $result .= '?>';
+		$result .= '?>';
 
-        file_put_contents($filename, $result);
-    }
+		file_put_contents($filename, $result);
+	}
 
 }
 

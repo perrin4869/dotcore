@@ -7,19 +7,19 @@
  */
 class FeatureTitle extends DotCoreFeature
 {
-    public function __construct(DotCoreFeatureRecord $record, $parameters = array())
-    {
-        parent::__construct($record, $parameters);
-    }
+	public function __construct(DotCoreFeatureRecord $record, $parameters = array())
+	{
+		parent::__construct($record, $parameters);
+	}
 	
-    /**
-     * Shows the contact form to the user
-     *
-     */
-    public function GetFeatureContent()
-    {
-        return DotCorePageRenderer::GetCurrent()->GetTitle();
-    }
+	/**
+	 * Shows the contact form to the user
+	 *
+	 */
+	public function GetFeatureContent()
+	{
+		return DotCorePageRenderer::GetCurrent()->GetTitle();
+	}
 }
 
 ?>

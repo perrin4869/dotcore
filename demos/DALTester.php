@@ -49,27 +49,27 @@ include($_SERVER['DOCUMENT_ROOT'].'/custom/components.php');
 
 <style type="text/css">
 
-    body{
-        margin: 0px;
-        padding: 0px;
-    }
+	body{
+		margin: 0px;
+		padding: 0px;
+	}
 
-    .RightToLeftInput {
-        direction: rtl;
-    }
+	.RightToLeftInput {
+		direction: rtl;
+	}
 
-    .LeftToRightInput {
-        direction: ltr;
-    }
+	.LeftToRightInput {
+		direction: ltr;
+	}
 
-    textarea {
-        width: 300px;
-        height: 200px;
-    }
+	textarea {
+		width: 300px;
+		height: 200px;
+	}
 
-    .richtext {
-        width: 99%;
-    }
+	.richtext {
+		width: 99%;
+	}
 
 </style>
 
@@ -103,16 +103,16 @@ $profiler->add('Start<br/><br/>');
 // Forms
 $users_bll =  new DotCoreUserBLL();
 $user = $users_bll
-    ->Fields(
-        array(
-            $users_bll->getFieldUserName(),
-            $users_bll->getFieldPassword(),
-            $users_bll->getFieldEmail(),
-            $users_bll->getFieldFirstName(),
-            $users_bll->getFieldLastName(),
-            $users_bll->getFieldLastLogin(),
-            $users_bll->getFieldPhone()))
-    ->GetByUsername('perrin4869');
+	->Fields(
+		array(
+			$users_bll->getFieldUserName(),
+			$users_bll->getFieldPassword(),
+			$users_bll->getFieldEmail(),
+			$users_bll->getFieldFirstName(),
+			$users_bll->getFieldLastName(),
+			$users_bll->getFieldLastLogin(),
+			$users_bll->getFieldPhone()))
+	->GetByUsername('perrin4869');
 
 /* @var $form_element DotCoreNewsRecord */
 $form_element = $blabla;
@@ -136,9 +136,9 @@ $form = $form_generator->GetForm();
 
 if($form->WasSubmitted())
 {
-    if($form_generator->ProcessForm($user, $messages)) {
-        $users_bll->Save($user);
-    }
+	if($form_generator->ProcessForm($user, $messages)) {
+		$users_bll->Save($user);
+	}
 }*/
 
 // echo $form;
@@ -149,23 +149,23 @@ if($form->WasSubmitted())
 $events_bll = new ChamberEilatEventBLL();
 
 $event =
-    $events_bll
-        ->Fields(array(
-                $events_bll->getFieldTitle(),
-                $events_bll->getFieldDescription(),
-                $events_bll->getFieldDetails(),
-                $events_bll->getFieldEventTypeID(),
-                $events_bll->getFieldStartDate(),
-                $events_bll->getFieldPlace()))
-        ->GetEventByID(4);
+	$events_bll
+		->Fields(array(
+				$events_bll->getFieldTitle(),
+				$events_bll->getFieldDescription(),
+				$events_bll->getFieldDetails(),
+				$events_bll->getFieldEventTypeID(),
+				$events_bll->getFieldStartDate(),
+				$events_bll->getFieldPlace()))
+		->GetEventByID(4);
 
 $event_types_bll = new ChamberEilatEventTypeBLL();
 $event_types = $event_types_bll->GetEventTypesByLanguageID(1); // 1 = hebrew
 $event_types_dictionary = array();
 $count_event_types = count($event_types);
 for($i = 0; $i < $count_event_types; $i++) {
-    $event_type = $event_types[$i];
-    $event_types_dictionary[$event_type->getEventTypeID()] = $event_type->getEventTypeName();
+	$event_type = $event_types[$i];
+	$event_types_dictionary[$event_type->getEventTypeID()] = $event_type->getEventTypeName();
 }
 
 $messages = array();
@@ -191,7 +191,7 @@ $form = $form_generator->GetForm();
 
 if($form->WasSubmitted())
 {
-    $form_generator->ProcessForm($event, $messages);
+	$form_generator->ProcessForm($event, $messages);
 }
 
 echo $form;

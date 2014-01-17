@@ -7,10 +7,10 @@
  */
 class DotCoreObject
 {
-    public function GetType()
-    {
-        return get_class($this);
-    }
+	public function GetType()
+	{
+		return get_class($this);
+	}
 }
 
 ?>

@@ -7,48 +7,48 @@
  */
 class DotCoreNewsRecord extends DotCoreDataRecord {
 
-    /**
-     * Constructor for News record
-     *
-     * @param DotCoreDAL $dal
-     */
-    public function  __construct(DotCoreDAL $dal) {
-        parent::__construct($dal);
-    }
+	/**
+	 * Constructor for News record
+	 *
+	 * @param DotCoreDAL $dal
+	 */
+	public function  __construct(DotCoreDAL $dal) {
+		parent::__construct($dal);
+	}
 
-    /*
-     *
-     * Accessors:
-     *
-     */
-    
-    /*
-     * Getters:
-     */
+	/*
+	 *
+	 * Accessors:
+	 *
+	 */
+	
+	/*
+	 * Getters:
+	 */
 
 	public function getNewsID() {
-        return $this->GetField(DotCoreNewsDAL::NEWS_ID);
+		return $this->GetField(DotCoreNewsDAL::NEWS_ID);
 	}
 
 	public function getNewsTitle() {
 		return $this->GetField(DotCoreNewsDAL::NEWS_TITLE);
 	}
 
-    public function getNewsShortContent() {
-        return $this->GetField(DotCoreNewsDAL::NEWS_SHORT_CONTENT);
-    }
+	public function getNewsShortContent() {
+		return $this->GetField(DotCoreNewsDAL::NEWS_SHORT_CONTENT);
+	}
 
-    public function getNewsLanguageID() {
-        return $this->GetField(DotCoreNewsDAL::NEWS_LANGUAGE_ID);
-    }
+	public function getNewsLanguageID() {
+		return $this->GetField(DotCoreNewsDAL::NEWS_LANGUAGE_ID);
+	}
 
 	public function getNewsContent() {
 		return $this->GetField(DotCoreNewsDAL::NEWS_CONTENT);
 	}
 
-    public function getNewsDate() {
-        return $this->GetField(DotCoreNewsDAL::NEWS_DATE);
-    }
+	public function getNewsDate() {
+		return $this->GetField(DotCoreNewsDAL::NEWS_DATE);
+	}
 
 	/*
 	* Setters:
@@ -56,28 +56,28 @@ class DotCoreNewsRecord extends DotCoreDataRecord {
 
 
 	private function setID($val) {
-        $this->SetField(DotCoreNewsDAL::NEWS_ID, $val);
+		$this->SetField(DotCoreNewsDAL::NEWS_ID, $val);
 	}
 
 	public function setNewsTitle($title) {
-        $this->SetField(DotCoreNewsDAL::NEWS_TITLE, $title);
+		$this->SetField(DotCoreNewsDAL::NEWS_TITLE, $title);
 	}
 
-    public function setNewsShortContent($content) {
-        $this->SetField(DotCoreNewsDAL::NEWS_SHORT_CONTENT, $content);
+	public function setNewsShortContent($content) {
+		$this->SetField(DotCoreNewsDAL::NEWS_SHORT_CONTENT, $content);
 	}
 
-    public function setNewsLanguageID($langID) {
-        $this->SetField(DotCoreNewsDAL::NEWS_LANGUAGE_ID, $langID);
-    }
+	public function setNewsLanguageID($langID) {
+		$this->SetField(DotCoreNewsDAL::NEWS_LANGUAGE_ID, $langID);
+	}
 
 	public function setNewsContent($content) {
-        $this->SetField(DotCoreNewsDAL::NEWS_CONTENT, $content);
+		$this->SetField(DotCoreNewsDAL::NEWS_CONTENT, $content);
 	}
 
-    public function setNewsDate($date){
-        $this->SetField(DotCoreNewsDAL::NEWS_DATE, $date);
-    }
+	public function setNewsDate($date){
+		$this->SetField(DotCoreNewsDAL::NEWS_DATE, $date);
+	}
 
 }
 ?>

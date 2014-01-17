@@ -13,26 +13,26 @@ class InvalidFulltextException extends DotCoreException {}
  */
 class UniqueKeyException extends DotCoreException
 {
-    public function  __construct($keys = array(), $message = NULL) {
-        parent::__construct($message);
+	public function  __construct($keys = array(), $message = NULL) {
+		parent::__construct($message);
 
-        $this->keys = $keys;
-    }
+		$this->keys = $keys;
+	}
 
-    /**
-     * Holds the keys whose unique values were violated
-     * @var array
-     */
-    private $keys = array();
+	/**
+	 * Holds the keys whose unique values were violated
+	 * @var array
+	 */
+	private $keys = array();
 
-    public function SetKeys($keys) {
-        $this->keys = $keys;
-        return $this;
-    }
+	public function SetKeys($keys) {
+		$this->keys = $keys;
+		return $this;
+	}
 
-    public function GetKeys() {
-        return $this->keys;
-    }
+	public function GetKeys() {
+		return $this->keys;
+	}
 }
 
 ?>

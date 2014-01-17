@@ -7,35 +7,35 @@ function createObjectCallback(obj, fn, argumentsOverride) {
 /// <param name="fn" type="function">The function to callback</param>
 /// <returns type="void">The callback function</returns>
 
-    return function() {
+	return function() {
 
-        var finalArgs;
-        if(argumentsOverride != null)
-        {
-            finalArgs = new Array();
-            var i;
-            for(i = 0; i < arguments.length;i++)
-            {
-                finalArgs.push(arguments[i]);
-            }
-            for(i = 0; i < argumentsOverride.length;i++)
-            {
-                finalArgs.push(argumentsOverride[i]);
-            }
-        }
-        else
-        {
-            finalArgs = arguments;
-        }
+		var finalArgs;
+		if(argumentsOverride != null)
+		{
+			finalArgs = new Array();
+			var i;
+			for(i = 0; i < arguments.length;i++)
+			{
+				finalArgs.push(arguments[i]);
+			}
+			for(i = 0; i < argumentsOverride.length;i++)
+			{
+				finalArgs.push(argumentsOverride[i]);
+			}
+		}
+		else
+		{
+			finalArgs = arguments;
+		}
 
-        fn.apply(obj, finalArgs);
-    };
+		fn.apply(obj, finalArgs);
+	};
 }
 
 
 function $get(id)
 {
-    return document.getElementById(id);
+	return document.getElementById(id);
 }
 
 /*
@@ -119,30 +119,30 @@ var getElementsByClassName = function (className, tag, elm){
 
 function getFileSync(url) {
   if (window.XMLHttpRequest) {
-    AJAX=new XMLHttpRequest();
+	AJAX=new XMLHttpRequest();
   } else {
-    AJAX=new ActiveXObject("Microsoft.XMLHTTP");
+	AJAX=new ActiveXObject("Microsoft.XMLHTTP");
   }
   if (AJAX) {
-     AJAX.open("GET", url, false);
-     AJAX.send(null);
-     return AJAX.responseText;
+	 AJAX.open("GET", url, false);
+	 AJAX.send(null);
+	 return AJAX.responseText;
   } else {
-     return false;
+	 return false;
   }
 }
 
 function swapNode (srcNode, node) {
-    var nextSibling = srcNode.nextSibling;
-    var parentNode = srcNode.parentNode;
-    node.parentNode.replaceChild(srcNode, node);
-    if(node == nextSibling){
-        parentNode.insertBefore(node, srcNode);
-    }
-    else{
-        // If we were swapping this for its next element, we only need to insert the element we removed before this element
-        parentNode.insertBefore(node, nextSibling);
-    }
+	var nextSibling = srcNode.nextSibling;
+	var parentNode = srcNode.parentNode;
+	node.parentNode.replaceChild(srcNode, node);
+	if(node == nextSibling){
+		parentNode.insertBefore(node, srcNode);
+	}
+	else{
+		// If we were swapping this for its next element, we only need to insert the element we removed before this element
+		parentNode.insertBefore(node, nextSibling);
+	}
 }
 
 function swapClass (srcNode, node) {
@@ -152,39 +152,39 @@ function swapClass (srcNode, node) {
 }
 
 function setOpacity(e, value) {
-    e.style.opacity = value/10;
-    e.style.filter = 'alpha(opacity=' + value*10 + ')';
+	e.style.opacity = value/10;
+	e.style.filter = 'alpha(opacity=' + value*10 + ')';
 }
 
 // Function from:
 // http://robertnyman.com/2006/04/24/get-the-rendered-style-of-an-element/
 function getStyle(oElm, strCssRule){
-    var strValue = "";
-    if(document.defaultView && document.defaultView.getComputedStyle){
-            strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
-    }
-    else if(oElm.currentStyle){
-            strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1){
-                    return p1.toUpperCase();
-            });
-            strValue = oElm.currentStyle[strCssRule];
-    }
-    return strValue;
+	var strValue = "";
+	if(document.defaultView && document.defaultView.getComputedStyle){
+			strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
+	}
+	else if(oElm.currentStyle){
+			strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1){
+					return p1.toUpperCase();
+			});
+			strValue = oElm.currentStyle[strCssRule];
+	}
+	return strValue;
 }
 
 function getInnerText(elem)
 {
-    return elem.innerHTML
-        .replace(/<\s*(\w[\w\d]*)\b[^>]*>([\s\S]*?)<\s*\/\s*\1\s*>/gi, "$2")
-        .replace(/<[^>]+?\/>/, '');
+	return elem.innerHTML
+		.replace(/<\s*(\w[\w\d]*)\b[^>]*>([\s\S]*?)<\s*\/\s*\1\s*>/gi, "$2")
+		.replace(/<[^>]+?\/>/, '');
 }
 
 function getAttributeNS(elem, ns, attr) {
-    return elem.getAttribute(ns+":"+attr);
+	return elem.getAttribute(ns+":"+attr);
 }
 
 function setAttributeNS(elem, ns, attr, val) {
-    elem.setAttribute(ns+":"+attr, val);
+	elem.setAttribute(ns+":"+attr, val);
 }
 
 function createCookie(c_name,value,expiredays)
@@ -196,14 +196,14 @@ document.cookie=c_name+ "=" +escape(value)+
 }
 
 function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
 }
 
 function eraseCookie(name) {
@@ -211,23 +211,23 @@ function eraseCookie(name) {
 }
 
 function getOffset (element) {
-    var offset = {top: 0, left: 0};
+	var offset = {top: 0, left: 0};
 
-    if (element.offsetTop)
-    {
-        offset.top += element.offsetTop;
-        offset.left += element.offsetLeft;
-    }
+	if (element.offsetTop)
+	{
+		offset.top += element.offsetTop;
+		offset.left += element.offsetLeft;
+	}
 
-    var parent = element.offsetParent;
-    while (parent) {
-        if (parent.offsetTop)
-            offset.top += parent.offsetTop;
-        if(parent.offsetLeft)
-            offset.left += parent.offsetLeft;
+	var parent = element.offsetParent;
+	while (parent) {
+		if (parent.offsetTop)
+			offset.top += parent.offsetTop;
+		if(parent.offsetLeft)
+			offset.left += parent.offsetLeft;
 
-        parent = parent.offsetParent;
-    }
+		parent = parent.offsetParent;
+	}
 
-    return offset;
+	return offset;
 }

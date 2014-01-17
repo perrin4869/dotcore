@@ -1,6 +1,6 @@
 <?php
 $messages = array();
-        
+		
 $messages['MessageLoadingImages'] = array();
 $messages['MessageLoadingImages'][DotCoreMessages::VALUES] = array(
 	'en' => 'Loading images, please wait...',

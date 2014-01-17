@@ -1,24 +1,24 @@
 /* 
-    Document   : configuration
-    Created on : Jan 11, 2009, 5:35:52 PM
-    Author     : perrin
-    Description:
-        The stylesheet defines the styles for the configuration of the project.
+	Document   : configuration
+	Created on : Jan 11, 2009, 5:35:52 PM
+	Author	 : perrin
+	Description:
+		The stylesheet defines the styles for the configuration of the project.
 */
 
 body {
-    direction: rtl;
+	direction: rtl;
 }
 
 #wrapper{
-    margin: 100px auto 0px auto;
-    width: 800px;
-    padding: 20px;
-    background-color: #BBBBEE;
-    border: 4px solid aqua;
+	margin: 100px auto 0px auto;
+	width: 800px;
+	padding: 20px;
+	background-color: #BBBBEE;
+	border: 4px solid aqua;
 }
 
 #wrapper form{
-    overflow: hidden;
+	overflow: hidden;
 }
 

@@ -15,28 +15,28 @@ include ($core_folder . $data_folder . 'DotCoreDAL/include.php');
 include ($core_folder . $data_folder . 'DotCoreBLL/include.php');
 
 function register_core_dal_field($field) {
-    global $data_folder;
-    register_core_component($field, $data_folder . 'DotCoreDALFields/' . $field . '.php');
+	global $data_folder;
+	register_core_component($field, $data_folder . 'DotCoreDALFields/' . $field . '.php');
 }
 
 function register_core_dal_entity($entity) {
-    global $data_folder;
-    register_core_component($entity, $data_folder . 'DotCoreDALEntities/' . $entity . '.php');
+	global $data_folder;
+	register_core_component($entity, $data_folder . 'DotCoreDALEntities/' . $entity . '.php');
 }
 
 function register_core_dal_relationship($link) {
-    global $data_folder;
-    register_core_component($link, $data_folder . 'DotCoreDALRelationships/' . $link . '.php');
+	global $data_folder;
+	register_core_component($link, $data_folder . 'DotCoreDALRelationships/' . $link . '.php');
 }
 
 function register_core_dal_restraint($restraint) {
-    global $data_folder;
-    register_core_component($restraint, $data_folder . 'DotCoreDALRestraints/' . $restraint . '.php');
+	global $data_folder;
+	register_core_component($restraint, $data_folder . 'DotCoreDALRestraints/' . $restraint . '.php');
 }
 
 function register_core_dal_selection_order($selection_order) {
-    global $data_folder;
-    register_core_component($selection_order, $data_folder . 'DotCoreDALSelectionOrders/' . $selection_order . '.php');
+	global $data_folder;
+	register_core_component($selection_order, $data_folder . 'DotCoreDALSelectionOrders/' . $selection_order . '.php');
 }
 
 // Register Data Access Components

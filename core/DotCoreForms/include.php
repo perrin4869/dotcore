@@ -10,8 +10,8 @@
 $forms_folder = 'DotCoreForms/';
 
 function register_core_form_element($element) {
-    global $forms_folder;
-    register_core_component($element, $forms_folder . 'DotCoreFormElements/' . $element . '.php');
+	global $forms_folder;
+	register_core_component($element, $forms_folder . 'DotCoreFormElements/' . $element . '.php');
 }
 
 // Register form components

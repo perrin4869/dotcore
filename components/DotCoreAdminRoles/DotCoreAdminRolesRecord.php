@@ -7,44 +7,44 @@
  */
 class DotCoreAdminRolesRecord extends DotCoreDataRecord {
 
-    /**
-     * Constructor for Admin's Role records
-     *
-     * @param DotCoreDAL $dal
-     */
-    public function  __construct(DotCoreDAL $dal) {
-        parent::__construct($dal);
-    }
+	/**
+	 * Constructor for Admin's Role records
+	 *
+	 * @param DotCoreDAL $dal
+	 */
+	public function  __construct(DotCoreDAL $dal) {
+		parent::__construct($dal);
+	}
 
-    /*
-     *
-     * Accessors:
-     *
-     */
+	/*
+	 *
+	 * Accessors:
+	 *
+	 */
 
-    /*
-     * Getters:
-     */
+	/*
+	 * Getters:
+	 */
 
-    public function getRoleID() {
-        return $this->GetField(DotCoreAdminRolesDAL::ADMIN_ROLES_ROLE_ID);
-    }
+	public function getRoleID() {
+		return $this->GetField(DotCoreAdminRolesDAL::ADMIN_ROLES_ROLE_ID);
+	}
 
-    public function getAdminID() {
-        return $this->GetField(DotCoreAdminRolesDAL::ADMIN_ROLES_ADMIN_ID);
-    }
+	public function getAdminID() {
+		return $this->GetField(DotCoreAdminRolesDAL::ADMIN_ROLES_ADMIN_ID);
+	}
 
-    /*
-     * Setters:
-     */
+	/*
+	 * Setters:
+	 */
 
-    private function setRoleID($val) {
-        $this->SetField(DotCoreAdminRolesDAL::ADMIN_ROLES_ROLE_ID, $val);
-    }
+	private function setRoleID($val) {
+		$this->SetField(DotCoreAdminRolesDAL::ADMIN_ROLES_ROLE_ID, $val);
+	}
 
-    private function setAdminID($val) {
-        $this->SetField(DotCoreAdminRolesDAL::ADMIN_ROLES_ADMIN_ID, $val);
-    }
+	private function setAdminID($val) {
+		$this->SetField(DotCoreAdminRolesDAL::ADMIN_ROLES_ADMIN_ID, $val);
+	}
 
 }
 ?>

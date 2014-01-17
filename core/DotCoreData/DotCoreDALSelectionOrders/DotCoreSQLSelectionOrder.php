@@ -7,16 +7,16 @@
  */
 class DotCoreSQLSelectionOrder extends DotCoreDALSelectionOrderUnit {
 
-    public function  __construct($sql) {
-        $this->sql = $sql;
-    }
+	public function  __construct($sql) {
+		$this->sql = $sql;
+	}
 
-    private $sql = NULL;
+	private $sql = NULL;
 
-    public function GetStatement()
-    {
-        return $this->sql;
-    }
+	public function GetStatement()
+	{
+		return $this->sql;
+	}
 
 }
 ?>

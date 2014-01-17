@@ -9,10 +9,10 @@
  */
 abstract class DotCoreDALRestraintUnit extends DotCoreObject {
 
-    /**
-     * Gets the SQL resulting from the restraint, compatible with MySQL.
-     */
-    public abstract function GetStatement();
+	/**
+	 * Gets the SQL resulting from the restraint, compatible with MySQL.
+	 */
+	public abstract function GetStatement();
 }
 
 // TODO: Generalize, create DotCoreMySqlRestraintUnit, DotCoreWSRestraintUnit, DotCoreOracleRestraintUnit, and so on

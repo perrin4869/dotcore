@@ -9,26 +9,26 @@ class InvalidWeekdayException extends DotCoreException {}
  */
 class DotCoreWeekdayField extends DotCoreIntField
 {
-    public function __construct(
-        $field_name,
-        DotCoreDAL $dal,
-        $is_nullable = TRUE)
-    {
-        parent::__construct($field_name, $dal, $is_nullable);
-    }
+	public function __construct(
+		$field_name,
+		DotCoreDAL $dal,
+		$is_nullable = TRUE)
+	{
+		parent::__construct($field_name, $dal, $is_nullable);
+	}
 
-    public function Validate(DotCoreDataRecord $record, &$val)
-    {
-        $result = parent::Validate($record, $val);
+	public function Validate(DotCoreDataRecord $record, &$val)
+	{
+		$result = parent::Validate($record, $val);
 
-        // Check the validity of the weekday
-        if(!$this->IsEmpty($val) && ($val < 0 || $val > 6))
-        {
-            throw new InvalidWeekdayException();
-        }
+		// Check the validity of the weekday
+		if(!$this->IsEmpty($val) && ($val < 0 || $val > 6))
+		{
+			throw new InvalidWeekdayException();
+		}
 
-        return $result;
-    }
+		return $result;
+	}
 }
 
 ?>

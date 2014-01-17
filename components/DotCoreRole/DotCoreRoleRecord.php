@@ -7,48 +7,48 @@
  */
 class DotCoreRoleRecord extends DotCoreDataRecord {
 
-    /**
-     * Constructor for Role record
-     *
-     * @param DotCoreDAL $dal
-     */
-    public function  __construct(DotCoreDAL $dal) {
-        parent::__construct($dal);
-    }
+	/**
+	 * Constructor for Role record
+	 *
+	 * @param DotCoreDAL $dal
+	 */
+	public function  __construct(DotCoreDAL $dal) {
+		parent::__construct($dal);
+	}
 
-    public function  __toString() {
-        return $this->getRoleDesc();
-    }
+	public function  __toString() {
+		return $this->getRoleDesc();
+	}
 
-    /*
-     *
-     * Accessors:
-     *
-     */
+	/*
+	 *
+	 * Accessors:
+	 *
+	 */
 
-    /*
-     * Getters:
-     */
+	/*
+	 * Getters:
+	 */
 
-    public function getRoleID() {
-        return $this->GetField(DotCoreRoleDAL::ROLES_ID);
-    }
+	public function getRoleID() {
+		return $this->GetField(DotCoreRoleDAL::ROLES_ID);
+	}
 
-    public function getRoleDesc() {
-        return $this->GetField(DotCoreRoleDAL::ROLES_DESC);
-    }
+	public function getRoleDesc() {
+		return $this->GetField(DotCoreRoleDAL::ROLES_DESC);
+	}
 
-    /*
-     * Setters:
-     */
+	/*
+	 * Setters:
+	 */
 
-    private function setRoleID($val) {
-        $this->SetField(DotCoreRoleDAL::ROLES_ID, $val);
-    }
+	private function setRoleID($val) {
+		$this->SetField(DotCoreRoleDAL::ROLES_ID, $val);
+	}
 
-    public function setRoleDesc($val) {
-        $this->SetField(DotCoreRoleDAL::ROLES_DESC, $val);
-    }
+	public function setRoleDesc($val) {
+		$this->SetField(DotCoreRoleDAL::ROLES_DESC, $val);
+	}
 
 }
 ?>
