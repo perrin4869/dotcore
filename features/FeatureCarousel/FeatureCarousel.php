@@ -1,13 +1,4 @@
 <?php
-// +------------------------------------------------------------------------+
-// | FeatureCarousel.php													|
-// +------------------------------------------------------------------------+
-// | Copyright (c) Julian Grinblat 2009. All rights reserved.			   |
-// | Version	   0.01													 |
-// | Last modified 31/08/2009											   |
-// | Email		 juliangrinblat@gmail.com								 |
-// | Web		   http://www.dotcore.co.il								 |
-// +------------------------------------------------------------------------+
 
 /**
  * Class FeatureCarousel
